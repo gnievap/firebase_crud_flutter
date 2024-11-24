@@ -1,15 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crud_firebase/team.dart';
 
-class FireStoreService {
-  static final FireStoreService _instance = FireStoreService._internal();
+class FirestoreService {
+  static final FirestoreService _instance = FirestoreService._internal();
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  factory FireStoreService() {
+  factory FirestoreService() {
     return _instance;
   }
 
-  FireStoreService._internal();
+  FirestoreService._internal();
 
   Future<void> agregarDatos(String collection, Map<String, dynamic> data) {
     return _firestore.collection(collection).add(data);
