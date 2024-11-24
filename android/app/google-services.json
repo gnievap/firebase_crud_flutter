@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "805735389927",
+    "project_id": "nfl-teams-68de5",
+    "storage_bucket": "nfl-teams-68de5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805735389927:android:9760ff17cd3e4027e3a042",
+        "android_client_info": {
+          "package_name": "com.example.nfl_teams"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHViLwMi_UWWY62PqeSZPFf1TVyPr3PN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805735389927:android:e51499a515a5ac06e3a042",
+        "android_client_info": {
+          "package_name": "uttlaxcala.edu.mx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHViLwMi_UWWY62PqeSZPFf1TVyPr3PN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
