@@ -6,7 +6,7 @@ class TeamScreen extends StatefulWidget {
   const TeamScreen({super.key});
 
   @override
-  _TeamScreenState createState() => _TeamScreenState();
+  State<TeamScreen> createState() => _TeamScreenState();
 }
 
 class _TeamScreenState extends State<TeamScreen> {
