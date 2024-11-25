@@ -41,6 +41,42 @@ class _TeamScreenState extends State<TeamScreen> {
     _firestoreService.eliminarDatos('teams', docId);
   }
 
+  void _mostrarDialogoEditar(Team team) { 
+    _conferenciaController.text = team.conferencia; 
+    _divisionController.text = team.division; 
+    _nombreController.text = team.nombre; 
+    showDialog( context: context, builder: (BuildContext context) { 
+      return AlertDialog( title: const Text('Editar Equipo'), 
+      content: Column( 
+        mainAxisSize: MainAxisSize.min, 
+        children: [ 
+          TextField( 
+            controller: _conferenciaController, 
+            decoration: const InputDecoration(labelText: 'Conferencia'), 
+          ), 
+          TextField( 
+            controller: _divisionController, 
+            decoration: const InputDecoration(labelText: 'División'), 
+          ), 
+          TextField( 
+            controller: _nombreController, 
+            decoration: const InputDecoration(labelText: 'Nombre'), 
+            ), 
+          ], 
+        ), 
+        actions: [ 
+          TextButton( onPressed: () => Navigator.of(context).pop(), 
+            child: const Text('Cancelar'), 
+          ), 
+          TextButton( onPressed: () => _actualizarEquipo(team.id), 
+            child: const Text('Guardar'), 
+          ), 
+        ], 
+      ); 
+    }, 
+  );
+  } 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,12 +118,13 @@ class _TeamScreenState extends State<TeamScreen> {
                     return ListTile(
                       title: Text(team.nombre),
                       subtitle: Text('Conferencia: ${team.conferencia}, División: ${team.division}'),
-                      onTap: () {
-                        _conferenciaController.text = team.conferencia;
-                        _divisionController.text = team.division;
-                        _nombreController.text = team.nombre;
-                        _actualizarEquipo(team.id);
-                      },
+                      onTap: () => _mostrarDialogoEditar(team),
+                      // {
+                      //   _conferenciaController.text = team.conferencia;
+                      //   _divisionController.text = team.division;
+                      //   _nombreController.text = team.nombre;
+                      //   _actualizarEquipo(team.id);
+                      // },
                       trailing: IconButton(
                         icon: const Icon(Icons.delete),
                         onPressed: () {
